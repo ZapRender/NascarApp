@@ -17,4 +17,19 @@ class AppColors {
   static const colorBlue = Color(0xFF0D47A1);
 
   static const error = Color(0xFFFF4949);
+
+  //Status color pastel:
+  // static const statusEntered = Color(0xFF979797);
+  // static const statusInProgress = Color(0xFF809CFF);
+  // static const statusPending = Color(0xFFFFCC80);
+  // static const statusFinish= Color(0xFFCCFF80);
+  // static const statusRemoved = Color(0xFFFF8080);
+  
+  //Status color darker:
+  static const statusEntered = Color(0xFF979797);
+  static const statusInProgress = Color(0xFF0055A3);
+  static const statusPending = Color(0xFFA36200);
+  static const statusFinish= Color(0xFF21A300);
+  static const statusRemoved = Color(0xFFA30000);
+
 }

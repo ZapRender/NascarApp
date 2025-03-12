@@ -3,6 +3,7 @@ import 'package:nascar_app/core/theme/app_colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -10,34 +11,51 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: AppColors.darkBackground,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Expanded(
-            child: ListView.builder(
-              itemCount: 10 + 1,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: TextField(
-                      controller: null,
-                      decoration: InputDecoration(
-                        labelText: 'Buscar',
-                        labelStyle: TextStyle(color: AppColors.primaryTextDark, fontSize: 20.0),
-                        prefixIcon: Icon(Icons.search),
-                        prefixIconColor: AppColors.primaryTextDark,
-                        suffixIcon: Icon(Icons.filter_alt_outlined),
-
-                        suffixIconColor: AppColors.primaryTextDark,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: null,
+                        decoration: InputDecoration(
+                          labelText: 'Buscar',
+                          labelStyle: TextStyle(color: AppColors.primaryTextDark, fontSize: 20.0),
+                          suffixIcon: Icon(Icons.filter_alt_outlined, color: AppColors.primaryTextDark),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ),
                     ),
-                  );
-                } else {
-                  return TaskItem();
-                }
-              },
-            ),
+                    Container(
+                      margin: EdgeInsets.only(left: 10.0),
+                      decoration: BoxDecoration(
+                        color: AppColors.darkCard,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        icon: Icon(Icons.sync),
+                        color: AppColors.primaryTextDark,
+                        onPressed: () {
+                          // Acción al presionar el ícono
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return TaskItem();
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -47,6 +65,7 @@ class HomeScreen extends StatelessWidget {
 
 class TaskItem extends StatelessWidget {
   const TaskItem({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -89,11 +108,11 @@ class TaskItem extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: (){},
+                  onPressed: () {},
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all( AppColors.error),
-                    shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
-                    padding: WidgetStateProperty.all(EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0, right: 4.0)),
+                    backgroundColor: WidgetStateProperty .all(AppColors.error),
+                    shape: WidgetStateProperty .all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
+                    padding: WidgetStateProperty .all(EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0, right: 4.0)),
                   ),
                   child: Row(
                     children: [

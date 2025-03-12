@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nascar_app/core/theme/app_colors.dart';
+import 'package:nascar_app/presentation/widgets/ask_pin_dialog.dart';
+import 'package:nascar_app/presentation/widgets/change_status_dialog.dart';
 
 class DescriptionScreen extends StatelessWidget {
   const DescriptionScreen({super.key});
@@ -15,8 +17,14 @@ class DescriptionScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
-              
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return ChangeStatusDialog();
+                  },
+                );
+              },
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(AppColors.error),
                 shape: WidgetStateProperty.all(
@@ -70,7 +78,9 @@ class DescriptionScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 10.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
-                    side: BorderSide(color: AppColors.primaryTextDark.withValues(alpha: 0.5)),
+                    side: BorderSide(
+                      color: AppColors.primaryTextDark.withValues(alpha: 0.5),
+                    ),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -86,24 +96,32 @@ class DescriptionScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            
+
             Text(
               'Bloque, tapas, cigueñal, culata con íñas, 4 bielas, 4 listones.',
-              style: TextStyle(color: AppColors.primaryTextDark,
-                        fontSize: 22.0, fontWeight: FontWeight.w400,),
+              style: TextStyle(
+                color: AppColors.primaryTextDark,
+                fontSize: 22.0,
+                fontWeight: FontWeight.w400,
+              ),
             ),
             Divider(color: AppColors.primaryTextDark.withValues(alpha: 0.5)),
             Row(
               children: [
                 Text(
                   'Bloque: ',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,),
-                ),Text(
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
                   'Descripción del bloque',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,),
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                  ),
                 ),
               ],
             ),
@@ -112,13 +130,18 @@ class DescriptionScreen extends StatelessWidget {
               children: [
                 Text(
                   'Cilindro: ',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,),
-                ),Text(
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
                   'Descripción del bloque',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,),
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                  ),
                 ),
               ],
             ),
@@ -127,13 +150,18 @@ class DescriptionScreen extends StatelessWidget {
               children: [
                 Text(
                   'Cigueñal: ',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,),
-                ),Text(
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
                   'Descripción del bloque',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,),
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                  ),
                 ),
               ],
             ),
@@ -142,13 +170,18 @@ class DescriptionScreen extends StatelessWidget {
               children: [
                 Text(
                   '4bielas: ',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.w600,),
-                ),Text(
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
                   'Descripción del bloque',
-                  style: TextStyle(color: AppColors.primaryTextDark,
-                            fontSize: 20.0,),
+                  style: TextStyle(
+                    color: AppColors.primaryTextDark,
+                    fontSize: 20.0,
+                  ),
                 ),
               ],
             ),
