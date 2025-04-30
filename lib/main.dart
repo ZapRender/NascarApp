@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Nascar App',
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      initialRoute: AppRoutes.description,
+      initialRoute: AppRoutes.home,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

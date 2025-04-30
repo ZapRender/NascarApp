@@ -46,7 +46,7 @@ class ChangeStatusDialog extends StatelessWidget {
                   ),
                   SizedBox(height: 10.0),
                   ButtonStatus(
-                    status: 'terminado',
+                    status: 'Retirado',
                     color: AppColors.statusRemoved,
                   ),
                 ],
@@ -73,7 +73,7 @@ class ChangeStatusDialog extends StatelessWidget {
                         top: 8.0,
                         bottom: 8.0,
                         left: 8.0,
-                        right: 4.0,
+                        right: 8.0,
                       ),
                     ),
                   ),
@@ -102,7 +102,7 @@ class ChangeStatusDialog extends StatelessWidget {
                         top: 8.0,
                         bottom: 8.0,
                         left: 8.0,
-                        right: 4.0,
+                        right: 8.0,
                       ),
                     ),
                   ),
@@ -135,15 +135,29 @@ class ButtonStatus extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(color),
+        backgroundColor: WidgetStateProperty.all(Colors.transparent),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         ),
         padding: WidgetStateProperty.all(EdgeInsets.all(8.0)),
       ),
-      child: Text(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 12.0,
+            height: 12.0,
+            decoration: BoxDecoration(
+              color: color, 
+              shape: BoxShape.circle,
+            ),
+          ),
+          SizedBox(width: 8.0),
+          Text(
         status,
         style: TextStyle(fontSize: 20.0, color: AppColors.primaryTextDark),
+      ),
+        ],
       ),
     );
   }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nascar_app/core/theme/app_colors.dart';
+import 'package:nascar_app/presentation/views/descriptionScreen/description_screen.dart';
+import 'package:nascar_app/presentation/widgets/ask_pin_dialog.dart';
+import 'package:nascar_app/presentation/widgets/change_status_dialog.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -108,9 +111,16 @@ class TaskItem extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                   context: context,
+                  builder: (BuildContext context) {
+                    return ChangeStatusDialog();
+                  },
+                );
+                  },
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty .all(AppColors.error),
+                    backgroundColor: WidgetStateProperty .all(AppColors.colorBlue),
                     shape: WidgetStateProperty .all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))),
                     padding: WidgetStateProperty .all(EdgeInsets.only(top: 8.0, bottom: 8.0, left: 8.0, right: 4.0)),
                   ),
